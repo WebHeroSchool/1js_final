@@ -5,6 +5,9 @@ body{
   margin: 0;
 }
 
+.menu{
+  margin: 0 auto 0 auto;
+}
 
 .container{
   display: flex;
@@ -43,7 +46,9 @@ body{
 
 label:hover{
   color:lightblue;
+  cursor: pointer;
 }
+
 
 label::before{
   content: '';
@@ -75,56 +80,89 @@ label::before{
   border-radius: 7px;
   border: 0;
 }
+
+.begin_game:hover{
+  cursor: pointer;
+}
+.begin_game:focus{
+  outline:0;
+}
+
+
 .bg_cards{
-  margin-left: 727px;
-  margin-top: -200px;
+  display: flex;
+  margin: 0 auto 0 auto;
+  position: relative;
+  left: 360px;
+  bottom: 230px;
+  background-image: url(images/cards.png);
+  width: 514.58px;
+  height: 407.99px;
 }
-.bg_cards >img{
-  width: 83%;
-  height: 83%;
-}
+
 
 .table_3{
   display: none;
-  margin:317px 0 0 369px;
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
+.table_3_cards{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .table_6{
   display: none;
-
+  margin: 0 auto 0 auto;
 }
 
 .table_6-part-1{
-  display: inline-flex;
-  margin-left: 300px;
+  display: flex;
+  justify-content: center;
 }
 
 .table_6-part-2{
-  display: inline-flex;
-  margin-left: 300px;
+  display: flex;
+  justify-content: center;
 }
-
-.table_10-part-1{
-  display: inline-flex;
-  margin-left: 77px;
-  margin-right: 50px
-}
-
-.table_10-part-2{
-  display: inline-flex;
-  margin-left: 77px;
-  margin-right: 50px
-}
-
 
 .table_10{
   display: none;
-
+  margin: 0 auto 0 auto;
 }
+
+
+.table_10-part-1{
+  display: flex;
+  justify-content: center;
+}
+
+.table_10-part-2{
+  display: flex;
+  justify-content: center;
+}
+
+
 .card{
   width: 218px;
   height: 341px;
   margin: 24px 24px 24px 24px;
+}
+
+.table_6 .card{
+  margin: 20px 20px 20px 20px;
+}
+
+.table_10 .card{
+  margin: 20px 20px 20px 20px;
+}
+
+.card:hover{
+  cursor: pointer;
 }
 
 .card_inner{
@@ -165,4 +203,31 @@ label::before{
   z-index: 1;
   width: 218px;
   height: 341px;
+}
+
+
+@media screen and (max-width:1300px) {
+    .bg_cards{
+      left: 280px;
+    }
+}
+
+@media screen and (max-width:1275px) {
+    .bg_cards{
+      left: 200px;
+    }
+}
+
+@media screen and (max-width:1256px) {
+    .table_10 .card_back{
+      width: 181px;
+      height: 284px;
+      background-size: cover;
+    }
+}
+
+@media screen and (max-width:1091px) {
+    .bg_cards{
+      display: none;
+    }
 }

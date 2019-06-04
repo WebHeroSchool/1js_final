@@ -9,11 +9,17 @@ var difficulty = document.querySelectorAll('.diff_variant');
 var startButton = document.querySelector('button');
 var i;
 function StartGame() {
+  if (!cardInner) {
+    throw new Error("no object found!");
+}
   cardInner.forEach(function(item){
     i=0;
     item.style.transform = 'rotateY(0deg)';
   })
   cardInner.forEach(function(item){
+    if (!item) {
+    throw new Error("no video object found!");
+}
     item.addEventListener('click', function f(){
       i++;
       if(i > 1){
@@ -25,7 +31,7 @@ function StartGame() {
   })
   if(difficulty[0].checked == true){
     menu.style.display = 'none';
-    table_3.style.display = 'inline-flex';
+    table_3.style.display = 'block';
     card_front.forEach(function(item){
       item.style.backgroundImage = imagesFront[Math.floor(Math.random()*2)];
       item.addEventListener('click', Restart);
