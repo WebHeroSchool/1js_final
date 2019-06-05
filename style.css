@@ -70,7 +70,7 @@ label::before{
 
 
 .begin_game{
-  color: #fff;
+  color: #ffff;
   font-weight: bold;
   font-size: 32px;
   line-height: 37px;
@@ -101,13 +101,13 @@ label::before{
 }
 
 
-.table_easy{
-  display: block;
+.table_3{
+  display: none;
   width: 100%;
   margin: 0 auto 0 auto;
 }
 
-.table_easy_cards{
+.table_3_cards{
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -115,33 +115,33 @@ label::before{
   justify-content: center;
 }
 
-.table_normal{
-  display: block;
+.table_6{
+  display: none;
   margin: 0 auto 0 auto;
 }
 
-.table_normal-part-1{
+.table_6-part-1{
   display: flex;
   justify-content: center;
 }
 
-.table_normal-part-2{
+.table_6-part-2{
   display: flex;
   justify-content: center;
 }
 
-.table_hard{
-  display: block;
+.table_10{
+  display: none;
   margin: 0 auto 0 auto;
 }
 
 
-.table_hard-part-1{
+.table_10-part-1{
   display: flex;
   justify-content: center;
 }
 
-.table_hard-part-2{
+.table_10-part-2{
   display: flex;
   justify-content: center;
 }
@@ -153,11 +153,11 @@ label::before{
   margin: 24px 24px 24px 24px;
 }
 
-.table_normal .card{
+.table_6 .card{
   margin: 20px 20px 20px 20px;
 }
 
-.table_hard .card{
+.table_10 .card{
   margin: 20px 20px 20px 20px;
 }
 
@@ -170,13 +170,13 @@ label::before{
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform .6s;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
   box-sizing:border-box;
 
 }
 
-.card_front, .card_back , .card_bug{
+.card_front, .card_back{
   position: absolute;
   width: 100%;
   height: 100%;
@@ -191,7 +191,7 @@ label::before{
 
 .card_back{
   background-image: url(images/cardback.png);
-  z-index: 3;
+  z-index: 2;
   width: 218px;
   height: 341px;
 
@@ -203,16 +203,8 @@ label::before{
   z-index: 1;
   width: 218px;
   height: 341px;
-  background: url(images/cardfront.png);
 }
 
-.card_bug{
-  transform: rotateY(180deg);
-  z-index: 1;
-  width: 218px;
-  height: 341px;
-  background: url(images/cardbug.png);
-}
 
 @media screen and (max-width:1300px) {
     .bg_cards{
@@ -227,25 +219,10 @@ label::before{
 }
 
 @media screen and (max-width:1256px) {
-    .table_hard .card_back, .table_hard .card_front, .table_hard .card_bug{
+    .table_10 .card_back{
       width: 181px;
       height: 284px;
       background-size: cover;
-    }
-
-    .table_hard .card{
-      margin: 10px 5px 10px 5px;
-      width: 181px;
-      height: 284px;
-    }
-
-    .table_hard-part-1{
-      position: relative;
-      top: 50px;
-    }
-    .table_hard-part-2{
-      position: relative;
-      top: 70px;
     }
 }
 
@@ -253,8 +230,4 @@ label::before{
     .bg_cards{
       display: none;
     }
-}
-
-.hidden{
-  display: none;
 }
