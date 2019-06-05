@@ -1,25 +1,22 @@
 var menu = document.querySelector('.menu');
-var table_3 = document.querySelector('.table_3');
-var table_6 = document.querySelector('.table_6');
-var table_10 = document.querySelector('.table_10');
-var cardInner = document.querySelectorAll('.card_inner');
-var card_front = document.querySelectorAll('.card_front');
-var imagesFront = ['url(images/cardfront.png)', 'url(images/cardbug.png)'];
-var difficulty = document.querySelectorAll('.diff_variant');
+var table_easy = document.querySelector('.table_easy');
+var table_normal = document.querySelector('.table_normal');
+var table_hard = document.querySelector('.table_hard');
 var startButton = document.querySelector('button');
+var card_f_names = ['card_front', 'card_bug', 'card_front', 'card_bug'];
 var i;
 function StartGame() {
-  if (!cardInner) {
-    throw new Error("no object found!");
-}
+  var cardInner = document.querySelectorAll('.card_inner');
+  var difficulty = document.querySelectorAll('.diff_variant');
+  var table_easy_cards = document.querySelectorAll('.table_easy .card_inner');
+  var table_normal_cards = document.querySelectorAll('.table_normal .card_inner');
+  var table_hard_cards = document.querySelectorAll('.table_hard .card_inner');
+  var card_fronts;
   cardInner.forEach(function(item){
     i=0;
     item.style.transform = 'rotateY(0deg)';
   })
   cardInner.forEach(function(item){
-    if (!item) {
-    throw new Error("no video object found!");
-}
     item.addEventListener('click', function f(){
       i++;
       if(i > 1){
@@ -30,34 +27,108 @@ function StartGame() {
     });
   })
   if(difficulty[0].checked == true){
-    menu.style.display = 'none';
-    table_3.style.display = 'block';
-    card_front.forEach(function(item){
-      item.style.backgroundImage = imagesFront[Math.floor(Math.random()*2)];
+    menu.classList.toggle('hidden');
+    table_easy.classList.toggle('hidden');
+    var checkCards = document.querySelectorAll('.table_easy_cards .card_back');
+    if (checkCards.length == 0){
+      table_easy_cards.forEach(function(item){
+        var card_back = document.createElement('div');
+        var card_front = document.createElement('div');
+        card_back.classList.add('card_back');
+        card_front.classList.add(card_f_names[Math.floor(Math.random()*2)]);
+        item.appendChild(card_back);
+        item.appendChild(card_front);
+      })
+    } else{
+      //simple
+    }
+    card_fronts = document.querySelectorAll('.table_easy .card_bug, .table_easy .card_front');
+    card_fronts.forEach(function(item){
+      if(item.classList.contains('card_bug')){
+        item.classList.toggle('card_bug');
+      } else if (item.classList.contains('card_front')){
+        item.classList.toggle('card_front')
+      }
+      item.classList.add(card_f_names[Math.floor(Math.random()*2)]);
+
+      })
+
+    card_fronts = document.querySelectorAll('.table_easy .card_bug, .table_easy .card_front');
+    card_fronts.forEach(function(item){
       item.addEventListener('click', Restart);
     })
+
   } else if(difficulty[1].checked == true){
-      menu.style.display = 'none';
-      table_6.style.display = 'block';
-      card_front.forEach(function(item){
-        item.style.backgroundImage = imagesFront[Math.floor(Math.random()*2)];
+
+      menu.classList.toggle('hidden');
+      table_normal.classList.toggle('hidden');
+      var checkCards = document.querySelectorAll('.table_normal .card_back');
+      if (checkCards.length ==0){
+        table_normal_cards.forEach(function(item){
+          var card_back = document.createElement('div');
+          var card_front = document.createElement('div');
+          card_back.classList.add('card_back');
+          card_front.classList.add(card_f_names[Math.floor(Math.random()*2)]);
+          item.appendChild(card_back);
+          item.appendChild(card_front);
+        })
+      } else{
+        //simple
+      }
+      card_fronts = document.querySelectorAll('.table_normal .card_bug, .table_normal .card_front');
+      card_fronts.forEach(function(item){
+        if(item.classList.contains('card_bug')){
+          item.classList.toggle('card_bug');
+        } else if (item.classList.contains('card_front')){
+          item.classList.toggle('card_front')
+        }
+        item.classList.add(card_f_names[Math.floor(Math.random()*2)]);
+
+        })
+
+      card_fronts = document.querySelectorAll('.table_normal .card_bug, .table_normal .card_front');
+      card_fronts.forEach(function(item){
         item.addEventListener('click', Restart);
       })
     } else if(difficulty[2].checked == true){
-        menu.style.display = 'none';
-        table_10.style.display = 'block';
-        card_front.forEach(function(item){
-          item.style.backgroundImage = imagesFront[Math.floor(Math.random()*3)];
+        menu.classList.toggle('hidden');
+        table_hard.classList.toggle('hidden');
+        var checkCards = document.querySelectorAll('.table_hard .card_back');
+        if (checkCards.length ==0){
+          table_hard_cards.forEach(function(item){
+            var card_back = document.createElement('div');
+            var card_front = document.createElement('div');
+            card_back.classList.add('card_back');
+            card_front.classList.add(card_f_names[Math.floor(Math.random()*2)]);
+            item.appendChild(card_back);
+            item.appendChild(card_front);
+          })
+        } else{
+          //simple
+        }
+        var card_fronts = document.querySelectorAll('.table_hard .card_bug, .table_hard .card_front');
+        card_fronts.forEach(function(item){
+          if(item.classList.contains('card_bug')){
+            item.classList.toggle('card_bug');
+          } else if (item.classList.contains('card_front')){
+            item.classList.toggle('card_front')
+          }
+          item.classList.add(card_f_names[Math.floor(Math.random()*2)]);
+
+          })
+
+        card_fronts = document.querySelectorAll('.table_hard .card_bug, .table_hard .card_front');
+        card_fronts.forEach(function(item){
           item.addEventListener('click', Restart);
         })
   }
 }
 
 function Restart(){
-  menu.style.display = 'flex';
-  table_3.style.display = 'none';
-  table_6.style.display = 'none';
-  table_10.style.display = 'none';
+  menu.classList.toggle('hidden');
+  table_easy.classList.add('hidden');
+  table_normal.classList.add('hidden');
+  table_hard.classList.add('hidden');
 }
 
 
