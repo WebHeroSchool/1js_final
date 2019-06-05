@@ -6,13 +6,13 @@ body{
 }
 
 .menu{
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
 }
 
 .container{
   display: flex;
   flex-direction: column;
-  color: #ffff;
+  color: #fff;
   margin: 103px 0 0 129px;
 }
 
@@ -24,7 +24,7 @@ body{
   margin: 0;
 }
 
-.menu__title + p{
+.information{
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
@@ -36,8 +36,6 @@ body{
   padding: 0;
 }
 
-
-
 .difficulty > li{
   font-weight: bold;
   font-size: 50px;
@@ -48,7 +46,6 @@ label:hover{
   color:lightblue;
   cursor: pointer;
 }
-
 
 label::before{
   content: '';
@@ -65,12 +62,10 @@ label::before{
 .diff_variant[type="radio"]:checked +label::before{
   background: url(images/rectangle.png);
   background-size: contain;
-
 }
 
-
 .begin_game{
-  color: #ffff;
+  color: #fff;
   font-weight: bold;
   font-size: 32px;
   line-height: 37px;
@@ -88,26 +83,29 @@ label::before{
   outline:0;
 }
 
+.mini_container{
+  display: flex;
+}
 
 .bg_cards{
   display: flex;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   position: relative;
-  left: 360px;
-  bottom: 230px;
+  top:170px;
+  left: 232px;
   background-image: url(images/cards.png);
-  width: 514.58px;
-  height: 407.99px;
+  width: 418.58px;
+  height: 326.99px;
+  background-size: cover;
 }
 
-
-.table_3{
-  display: none;
+.table_easy{
+  display: block;
   width: 100%;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
 }
 
-.table_3_cards{
+.table_easy_row{
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -115,37 +113,58 @@ label::before{
   justify-content: center;
 }
 
-.table_6{
-  display: none;
-  margin: 0 auto 0 auto;
+.table_normal{
+  display: block;
+  margin: 0 auto;
 }
 
-.table_6-part-1{
+.table_normal_rows{
   display: flex;
   justify-content: center;
+  margin: 25px 20px 20px 20px;
 }
 
-.table_6-part-2{
+.table_normal .card{
+  margin: 20px 20px 20px 20px;
+  width: 181px;
+  height: 284px;
+}
+
+
+
+.table_normal_rows .card_bug,
+.table_normal_rows .card_front,
+.table_normal_rows .card_back{
+  width: 181px;
+  height: 284px;
+  background-size: cover;
+}
+
+.table_hard{
+  display: block;
+  margin: 0 auto;
+}
+
+.table_hard_rows{
   display: flex;
   justify-content: center;
+  margin: 40px 20px 20px 20px;
 }
 
-.table_10{
-  display: none;
-  margin: 0 auto 0 auto;
+.table_hard .card{
+  margin: 20px 20px 20px 20px;
+  margin: 10px 5px 10px 5px;
+  width: 181px;
+  height: 284px;
 }
 
-
-.table_10-part-1{
-  display: flex;
-  justify-content: center;
+.table_hard .card_back,
+.table_hard .card_front,
+.table_hard .card_bug{
+  width: 181px;
+  height: 284px;
+  background-size: cover;
 }
-
-.table_10-part-2{
-  display: flex;
-  justify-content: center;
-}
-
 
 .card{
   width: 218px;
@@ -153,16 +172,12 @@ label::before{
   margin: 24px 24px 24px 24px;
 }
 
-.table_6 .card{
-  margin: 20px 20px 20px 20px;
-}
-
-.table_10 .card{
-  margin: 20px 20px 20px 20px;
-}
-
 .card:hover{
   cursor: pointer;
+}
+
+.card_flip{
+  transform: rotateY(180deg);
 }
 
 .card_inner{
@@ -170,13 +185,12 @@ label::before{
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s;
+  transition: transform .6s;
   transform-style: preserve-3d;
   box-sizing:border-box;
-
 }
 
-.card_front, .card_back{
+.card_front, .card_back , .card_bug{
   position: absolute;
   width: 100%;
   height: 100%;
@@ -191,11 +205,9 @@ label::before{
 
 .card_back{
   background-image: url(images/cardback.png);
-  z-index: 2;
+  z-index: 3;
   width: 218px;
   height: 341px;
-
-
 }
 
 .card_front{
@@ -203,31 +215,29 @@ label::before{
   z-index: 1;
   width: 218px;
   height: 341px;
+  background: url(images/cardfront.png);
 }
 
+.card_bug{
+  transform: rotateY(180deg);
+  z-index: 1;
+  width: 218px;
+  height: 341px;
+  background: url(images/cardbug.png);
+}
 
 @media screen and (max-width:1300px) {
     .bg_cards{
-      left: 280px;
+            left: calc((100% - 200px*4)/2);
     }
 }
 
-@media screen and (max-width:1275px) {
-    .bg_cards{
-      left: 200px;
-    }
-}
-
-@media screen and (max-width:1256px) {
-    .table_10 .card_back{
-      width: 181px;
-      height: 284px;
-      background-size: cover;
-    }
-}
-
-@media screen and (max-width:1091px) {
+@media screen and (max-width:1025px) {
     .bg_cards{
       display: none;
     }
+}
+
+.hidden{
+  display: none;
 }
