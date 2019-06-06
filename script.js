@@ -97,5 +97,7 @@ function returnToMenu(arg){
     });
   });
 }
-
+if (!button) {
+    throw new Error("no object found!");
+}
 button.addEventListener('click', gameStart);
