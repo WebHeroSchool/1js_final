@@ -1,4 +1,7 @@
 const difficulty = document.querySelectorAll('.diff_variant');
+setTimeout(function(){
+  document.location.href = "page.html;"
+},500);
 const menu = document.querySelector('.menu');
 const tableEasy = document.querySelector('.table_easy');
 const tableNormal = document.querySelector('.table_normal');
@@ -96,8 +99,5 @@ function returnToMenu(arg){
       tableHard.classList.add('hidden');
     });
   });
-}
-if (!button) {
-    throw new Error("no object found!");
 }
 button.addEventListener('click', gameStart);
