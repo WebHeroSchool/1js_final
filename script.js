@@ -1,12 +1,4 @@
 const difficulty = document.querySelectorAll('.diff_variant');
-function confirmsave(){
-  var ans = confirm('Do u want to Save?');
-  if (ans == true) {document.location.href='login.aspx',true
-  }else {
-    return false;
-  }
-}
-confirmsave()
 const menu = document.querySelector('.menu');
 const tableEasy = document.querySelector('.table_easy');
 const tableNormal = document.querySelector('.table_normal');
@@ -105,4 +97,4 @@ function returnToMenu(arg){
     });
   });
 }
-button.addEventListener('click', gameStart);
+
