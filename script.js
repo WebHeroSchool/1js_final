@@ -3,7 +3,6 @@ const menu = document.querySelector('.menu');
 const tableEasy = document.querySelector('.table_easy');
 const tableNormal = document.querySelector('.table_normal');
 const tableHard = document.querySelector('.table_hard');
-const button = document.querySelector('button');
 const card = `<div class="card"> <div class="card_inner">
   <div class="card_back"></div> <div class="card_bad"></div>
   </div>`;
