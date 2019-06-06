@@ -1,5 +1,6 @@
 const difficulty = document.querySelectorAll('.diff_variant');
 const menu = document.querySelector('.menu');
+const button = document.querySelector('button');
 const tableEasy = document.querySelector('.table_easy');
 const tableNormal = document.querySelector('.table_normal');
 const tableHard = document.querySelector('.table_hard');
@@ -96,4 +97,4 @@ function returnToMenu(arg){
     });
   });
 }
-
+button.addEventListener('click', gameStart);
