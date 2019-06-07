@@ -97,7 +97,7 @@ label::before{
   display: flex;
   margin: 0 auto;
   position: relative;
-  top:170px;
+  top:165px;
   left: 232px;
   background-image: url(images/cards.png);
   width: 418.58px;
@@ -163,7 +163,7 @@ label::before{
   width: 181px;
   height: 284px;
 }
-
+.table_hard .card_inner,
 .table_hard .card_back,
 .table_hard .card_front,
 .table_hard .card_bug{
@@ -256,6 +256,37 @@ label::before{
     }
 }
 
+@media screen and (max-width:800px){
+    .table_easy_row{
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .table_easy .card_inner,
+    .table_easy .card_back,
+    .table_easy .card_front,
+    .table_easy .card_bug{
+      width: 181px;
+      height: 284px;
+      background-size: cover;
+    }
+}
+
+@media screen and (max-width:650px){
+    .container{
+      margin: 63px 0 0 90px;
+    }
+
+    .table_normal{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .table_normal_rows{
+      flex-direction: column;
+    }
+}
 .hidden{
   display: none;
 }
