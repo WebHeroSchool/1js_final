@@ -244,6 +244,18 @@ label::before{
     }
 }
 
+@media screen and (max-width:1000px){
+    .table_hard{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .table_hard_rows{
+      flex-direction: column;
+    }
+}
+
 .hidden{
   display: none;
 }
