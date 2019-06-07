@@ -252,6 +252,7 @@ label::before{
 
     .table_hard_rows{
       flex-direction: column;
+        margin:20px;
     }
 }
 
