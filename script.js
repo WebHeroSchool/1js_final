@@ -16,11 +16,9 @@ function gameStart()  {
   let tableEasyRow = document.querySelector('.table_easy_row');
   let tableNormalRows = document.querySelectorAll('.table_normal_rows');
   let tableHardRows = document.querySelectorAll('.table_hard_rows');
-  //Выбираем сложность
   if (difficulty[0].checked == true){
     menu.classList.toggle('hidden');
     tableEasy.classList.toggle('hidden');
-    //Добавляем 3 карты
     if(cardsEasyList.length == 0){
       for(let i = 0; i < 3;i++){
         tableEasyRow.insertAdjacentHTML('afterBegin', card);
@@ -29,7 +27,6 @@ function gameStart()  {
   } else if (difficulty[1].checked == true){
     menu.classList.toggle('hidden');
     tableNormal.classList.toggle('hidden');
-    //добавляем 6 карт
     if(cardsNormalList.length == 0){
       tableNormalRows.forEach(function (item){
         for(let i = 0; i < 3;i++){
@@ -41,7 +38,6 @@ function gameStart()  {
   else if (difficulty[2].checked == true){
     menu.classList.toggle('hidden');
     tableHard.classList.toggle('hidden');
-    //добавляем 10 карт
     if(cardsHardList.length == 0){
       tableHardRows.forEach(function (item){
         for(let i = 0; i < 5;i++){
