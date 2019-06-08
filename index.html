@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cards</title>
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="menu">
+      <div class="container">
+        <h1 class="menu__title">Выберите уровень сложности:</h1>
+        <p class="information">Выберите сложность и игра начнется.
+          Чем выше уровень - тем больше будет выборка карт</p>
+        <div class="mini_container">
+          <ul class="difficulty">
+            <li><input type="radio" value="easy" id="easy1" class = diff_variant name=difficulty>
+              <label for="easy1">Простой</label></li>
+            <li><input type="radio" value="normal" id="normal2" class = diff_variant name=difficulty>
+              <label for="normal2">Средний</label></li>
+            <li><input type="radio" value="hard" id="hard3" class = diff_variant name=difficulty>
+              <label for="hard3">Сложный</label></li>
+          </ul>
+          <div class= "bg_cards"></div>
+        </div>
+          <button class = "begin_game" type="submit" name="start_game">
+            Начать игру
+          </button>
+      </div>
+    </div>
+    <div class="table_easy hidden">
+      <div class="table_easy_row">
+      </div>
+    </div>
+    <div class="table_normal hidden">
+      <div class="table_normal_rows">
+      </div>
+      <div class="table_normal_rows">
+      </div>
+    </div>
+    <div class="table_hard hidden">
+      <div class="table_hard_rows">
+      </div>
+      <div class="table_hard_rows">
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="script.js" async>
+  </script>
+</html>
